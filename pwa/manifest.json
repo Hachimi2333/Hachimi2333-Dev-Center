@@ -1,0 +1,17 @@
+{
+    "name": "HachimiMC",
+    "short_name": "HachimiMC",
+    "description": "HachimiMC",
+    "icons": [
+      {
+        "src": "/img/x64.ico",
+        "sizes": "64x64",
+        "type": "ico"
+      }
+    ],
+    "background_color": "#fff",
+    "theme_color": "#000",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
