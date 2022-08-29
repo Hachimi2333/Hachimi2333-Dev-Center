@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <title>HachimiMC-Blog</title>
+  </head>
+  <body>
+
+  <div class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-indigo">
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+      <a href="https://www.hachimimc.ml/" class="mdui-typo-title">HachimiMC</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">account_circle</i></a>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+    </div>
+  </div>
+
+
+<p>&nbsp;</p>
+
+<div class="mdui-container">
+    <div class="mdui-typo">
+        <h1>Backblaze B2 免费 10GB 对象存储</h1>
+        <h2>步骤 <small>注册</small></h2>
+        <p><a href="https://www.backblaze.com/b2/sign-up.html?referrer=nopref" target="_blank">点我注册</a></p>
+        <p>注册的时候地区选择US West 即美国西部，如图</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/b2reg.png"/>
+        <p>注册完之后来到后台面板</p>
+        <h2>步骤 <small>创建储存桶</small></h2>
+        <p>点击 <kbd>Create a new bucket</kbd> 创建一个存储桶，名字随意，如图。</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/createbucket.png"/>
+        <p>创建时请选择公开public！</p>
+        <p>创建好以后，我们点击 <kbd>Bucket Settings</kbd> ，进行缓存设置。</p>
+        <p>接下来，在 Bucket Info 里填入 <code>{"cache-control":"max-age=31536000"}</code> 设置缓存时长，如图。</p>
+        <p>保存设置之后，点击旁边 <kbd>Upload/Download</kbd> 按钮上传文件。</p>
+        <p>待网站加载一会便可以点击上传按钮上传文件了。</p>
+        <p>上传完之后，点击最右端信息按钮，即可查看文件信息，如图。</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/fileinfo.png"/>
+        <h2>步骤 <small>接入 Cloudflare</small></h2>
+        <p>Cloudflare 和 Backblaze 有合作关系，使用 Cloudflare 接入 Backblaze B2 可以免除流量费用。</p>
+        <p>在刚才文件信息界面的Friendly URL里，找到根域名，我这里就是 <code>f004.backblazeb2.com</code>。</p>
+        <p>打开 Cloudflare 后台，登录账号，选择域名。</p>
+        <p>添加记录，记录类型选 <code>CNAME</code>，名称随意，然后将Friendly URL里的根域名填进去，打开代理。</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/createcname.png"/>
+        <p>接下来打开 <kbd>页面规则</kbd> ，添加一个规则，如图</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/createrules.png"/>
+        <p>接下来，把 Friendly URL 中的根域名换成你自己接入 Cloudflare 的域名就可以访问了！</p>
+        <p>无法访问？请往下看。</p>
+        <h2>步骤 <small>修改SSL/TLS 加密模式</small></h2>
+        <p>在Cloudflare的控制面板中找到SSL/TLS</p>
+        <p>修改SSL/TLS 加密模式为 完全（严格），如图</p>
+        <img class="mdui-img-rounded" src="https://assets.hachimimc.ml/file/Hachimi/blogassets/strictssl.png"/>
+        <p>接下来，把 Friendly URL 中的根域名换成你自己接入 Cloudflare 的域名就可以访问了！</p>
+        <blockquote>
+            <p>注意事项</p>
+            <p>Backblaze 免费 10GB 对象存储 + 每天免费 1GB 下载流量</p>
+            <p>感觉还是挺香的（</p>
+        </blockquote>
+    </div>
+  </div>
+
+<p>&nbsp;</p>
+
+ <!--页尾-->
+<div style="line-height:10px;color:rgb(148, 148, 148)">
+  <center>
+    <p>© 2022 <a href="https://www.hachimimc.ml" style="color:rgb(71, 71, 71)">Hachimi</a></p>
+    <p>由<a href="https://pages.github.com/" style="color:rgb(71, 71, 71)">Github Pages</a>托管</p>
+    <p><a href="https://icp.gov.moe/?keyword=20227230" target="_blank" style="color:rgb(71, 71, 71)">萌ICP备20227230号</a></p>
+  </center>
+</div>
+
+    <!-- MDUI JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  </body>
+</html>
